@@ -1,146 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arovia Bangladesh Online Office</title>
+<title>Arovia Bangladesh Login</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
 body{
-background:#f4f4f4;
-}
-
-header{
+margin:0;
+font-family:Arial;
 background:#0b8f45;
-color:white;
-padding:20px;
-text-align:center;
-}
-
-nav{
-background:#06783a;
 display:flex;
 justify-content:center;
-flex-wrap:wrap;
+align-items:center;
+height:100vh;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-padding:15px 20px;
-}
-
-nav a:hover{
-background:#055d2d;
-}
-
-.hero{
-padding:60px 20px;
+.box{
+background:#fff;
+padding:30px;
+width:320px;
+border-radius:10px;
 text-align:center;
+box-shadow:0 0 15px rgba(0,0,0,.3);
 }
 
-.hero h1{
-font-size:40px;
+h2{
 color:#0b8f45;
 }
 
-.hero p{
-font-size:20px;
-margin-top:15px;
-}
-
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:12px 30px;
-background:#0b8f45;
-color:white;
-text-decoration:none;
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
 border-radius:5px;
 }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-padding:30px;
+button{
+width:100%;
+padding:12px;
+background:#0b8f45;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#08753a;
+}
+
+#dashboard{
+display:none;
+text-align:center;
 }
 
 .card{
-background:white;
-padding:25px;
-border-radius:10px;
-text-align:center;
-box-shadow:0 0 10px rgba(0,0,0,.1);
-}
-
-footer{
-background:#0b8f45;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:30px;
+background:#f4f4f4;
+padding:15px;
+margin:10px 0;
+border-radius:8px;
 }
 </style>
 
 </head>
+
 <body>
 
-<header>
-<h1>Arovia Bangladesh</h1>
+<div class="box">
+
+<div id="login">
+
+<h2>Arovia Bangladesh</h2>
+
 <p>Together for a Better Tomorrow</p>
-</header>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">Attendance</a>
-<a href="#">Files</a>
-<a href="#">Notice</a>
-<a href="#">Events</a>
-<a href="#">Admin</a>
-</nav>
+<input type="text" id="user" placeholder="Username">
 
-<section class="hero">
-<h1>Welcome to Arovia Bangladesh Online Office</h1>
-<p>Manage attendance, notices, events and files from one place.</p>
+<input type="password" id="pass" placeholder="Password">
 
-<a class="btn" href="#">Login</a>
-</section>
+<button onclick="login()">Login</button>
 
-<section class="cards">
-
-<div class="card">
-<h2>Attendance</h2>
-<p>Employee attendance management.</p>
 </div>
 
-<div class="card">
-<h2>File Upload</h2>
-<p>Upload and download office documents.</p>
+<div id="dashboard">
+
+<h2>Admin Dashboard</h2>
+
+<div class="card">Attendance</div>
+
+<div class="card">File Upload</div>
+
+<div class="card">Notice Board</div>
+
+<div class="card">Events</div>
+
 </div>
 
-<div class="card">
-<h2>Notice Board</h2>
-<p>Latest office notices.</p>
 </div>
 
-<div class="card">
-<h2>Events</h2>
-<p>Upcoming meetings and programs.</p>
-</div>
+<script>
 
-</section>
+function login(){
 
-<footer>
-© 2026 Arovia Bangladesh | Together for a Better Tomorrow
-</footer>
+let u=document.getElementById("user").value;
+
+let p=document.getElementById("pass").value;
+
+if(u=="admin" && p=="1234"){
+
+document.getElementById("login").style.display="none";
+
+document.getElementById("dashboard").style.display="block";
+
+}else{
+
+alert("Wrong Username or Password");
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
